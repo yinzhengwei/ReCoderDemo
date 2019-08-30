@@ -1,9 +1,14 @@
 package cn.com.hexin.recoderdemo;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaRecorder;
+import android.os.Environment;
 
 import java.io.File;
 import java.io.IOException;
+
+import static com.android.yzw.myapplication.OpenAudioManagerKt.open;
 
 public class MediaRecordFunc {
     private boolean isRecord = false;
@@ -92,6 +97,7 @@ public class MediaRecordFunc {
                 path = AudioFileFunc.getWavFilePath();
                 break;
 
+
         }
         /* 设置输出文件的路径 */
         File file = new File(path);
@@ -99,10 +105,57 @@ public class MediaRecordFunc {
             file.delete();
         }
         mMediaRecorder.setOutputFile(path);
-
-
     }
 
+    public void startRecording(int outputfileformat,Context context) {
+        open(context);
+
+        mMediaRecorder = new MediaRecorder();
+
+/*        mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mRecorder.setOutputFormat(outputfileformat);
+//		mRecorder.setAudioSamplingRate(44100);
+//		mRecorder.setAudioEncodingBitRate(128000);
+//		if(extension!=null && extension.equalsIgnoreCase(".amr"))
+	        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+//		else
+//			mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        mRecorder.setOutputFile(mSampleFile.getAbsolutePath());
+*/
+        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mMediaRecorder.setOutputFormat(outputfileformat);
+        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        mMediaRecorder.setOutputFile(AudioFileFunc.getAMRFilePath());
+        mMediaRecorder.setAudioSamplingRate(44100);
+        mMediaRecorder.setAudioEncodingBitRate(128000);
+
+
+        // Handle IOException
+        try {
+            mMediaRecorder.prepare();
+        } catch(IOException exception) {
+            mMediaRecorder.reset();
+            mMediaRecorder.release();
+            mMediaRecorder = null;
+            return;
+        }
+        // Handle RuntimeException if the recording couldn't start
+        try {
+            mMediaRecorder.start();
+        } catch (RuntimeException exception) {
+            AudioManager audioMngr = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
+            boolean isInCall = ((audioMngr.getMode() == AudioManager.MODE_IN_CALL) ||
+                    (audioMngr.getMode() == AudioManager.MODE_IN_COMMUNICATION));
+            if (isInCall) {
+            } else {
+            }
+            mMediaRecorder.reset();
+            mMediaRecorder.release();
+            mMediaRecorder = null;
+            return;
+        }
+        isRecord = true;
+    }
 
     private void close() {
         if (mMediaRecorder != null) {
@@ -113,6 +166,5 @@ public class MediaRecordFunc {
             mMediaRecorder = null;
         }
     }
-
 
 }

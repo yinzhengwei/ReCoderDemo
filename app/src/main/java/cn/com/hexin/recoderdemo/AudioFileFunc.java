@@ -5,7 +5,8 @@ import android.os.Environment;
 import java.io.File;
 
 public class AudioFileFunc {
-    //音频输入-麦克风 
+
+    //音频输入-麦克风
     public final static int AUDIO_INPUT = MediaRecorder.AudioSource.MIC;
 
     //采用频率 
@@ -14,7 +15,8 @@ public class AudioFileFunc {
     //录音输出文件 
     private final static String AUDIO_RAW_FILENAME = "RawAudio.raw";
     private final static String AUDIO_WAV_FILENAME = "FinalAudio.wav";
-    public final static String AUDIO_AMR_FILENAME = "FinalAudio.amr";
+//    public final static String AUDIO_AMR_FILENAME = "FinalAudio.amr";
+    public final static String AUDIO_AMR_FILENAME = "FinalAudio.mp3";
 
     /**
      * 判断是否有外部存储设备sdcard

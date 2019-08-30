@@ -12,33 +12,140 @@
         android:layout_centerInParent="true"
         android:text="开始录音" />
 
-    <Button
-        android:id="@+id/start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="开始" />
+    <!--<Button-->
+    <!--android:id="@+id/start"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="开始" />-->
 
-    <cn.com.hexin.recoderdemo.text.MarqueeText
-        android:id="@+id/text"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
-        android:ellipsize="marquee"
-        android:gravity="center_horizontal"
-        android:lines="1"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:singleLine="true"
-        android:text="dagasgagaggsags"
-        android:textColor="#ffffff"
-        android:textSize="18sp" />
+    <!--<cn.com.hexin.recoderdemo.text.MarqueeText-->
+    <!--android:id="@+id/text"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:ellipsize="marquee"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:lines="1"-->
+    <!--android:marqueeRepeatLimit="marquee_forever"-->
+    <!--android:singleLine="true"-->
+    <!--android:text="dagasgagaggsags"-->
+    <!--android:textColor="#ffffff"-->
+    <!--android:textSize="18sp" />-->
 
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="停止" />
+    <!--<Button-->
+    <!--android:id="@+id/stop"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:text="停止" />-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/scan"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="500dp"-->
+        <!--android:background="@color/colorPrimaryDark">-->
+
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_showsecend"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_marginTop="200dp"-->
+            <!--android:text="我是三方应用按钮1" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_show"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/btn_showsecend"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:text="我是三方应用按钮2" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_showthree"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:text="我是三方应用按钮3" />-->
+
+        <!--&lt;!&ndash;这里千万不能用button&ndash;&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/btn_shangceng"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:src="@mipmap/ic_launcher_round" />-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/scan">-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/layout"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_left"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="左"-->
+                <!--android:textSize="30sp" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_right"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="右"-->
+                <!--android:textSize="30sp" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_onclick"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_above="@+id/layout"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:text="点击"-->
+            <!--android:textSize="30sp" />-->
+
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_toEndOf="@+id/layout"-->
+            <!--android:layout_toRightOf="@+id/layout"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_top"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="上"-->
+                <!--android:textSize="30sp" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_down"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="下"-->
+                <!--android:textSize="30sp" />-->
+
+        <!--</LinearLayout>-->
+
+
+    <!--</RelativeLayout>-->
 
 </RelativeLayout>
